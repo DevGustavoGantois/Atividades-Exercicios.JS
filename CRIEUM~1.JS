@@ -1,17 +1,16 @@
-let cores = ["Vermelho", "Azul", "Amarelo", "Preto", "Branco"]
+function analisar () {
 
-var resp = 0
-let clientes =  "Vermelho"
+let ferramentas = ["Martelo", "Prego", "Furadeira", "Telhas", "Cimento", "Piso", "Escavadeira", "Tijolo", "Pá"]
+let resposta = "fim"
 
-for (let count = 0; count <cores.length; count++) {
-    if ( clientes == cores[count] ) {
-        resp += 1
+
+
+while (resposta != "fim") {
+    for (let count = 0; count < ferramentas.lenght; count++) {
+        console.log(ferramentas[count])
     }
+} if (resposta == "fim" ) {
+    console.log("FIM DO PROGRAMA.")
 }
 
-
-if(resp == 1) {
-    console.log(`Achou a cor ${cores}`)
-} else {
-    console.log(`Não achou a cor ${cores}`)
 }
