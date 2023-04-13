@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de manipulação de array</title>
+    <style>
+        body {
+            font-style: italic;
+            color: white;
+            background-color: rgb(114, 114, 219);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Notas de um Aluno:</h1>
+    </header>
+    <div>
+        <p>Digite 6 notas:</p>
+        <input type="text" id="notas" name="notas">
+        <input type="button" value="enviar" onclick="addNotas()">
+        <p><input type="button" value="Calcular as médias." onclick="calcMedia()"></p>
+        <div>
+            <select name="caixa" id="caixa">
+                <option>Digite as notas.</option>
+            </select>
+        </div>
+    </div>
+</body>
+<script>
+    let notas = [];
+    let n;
+
+    function calcMedia() {
+        let caixa = document.getElementById("caixa");
+
+        notas.forEach((nota, index) => {
+            if (nota < 6) {
+                notas[index] = nota + 1;
+            }
+        });
+
+        caixa.innerHTML = "";
+        notas.forEach((nota) => {
+            const item = document.createElement("option");
+            item.text = nota;
+            caixa.appendChild(item);
+        });
+    }
+
+    function addNotas() {
+        let caixa = document.getElementById("caixa");
+        n = Number(document.getElementById("notas").value);
+        notas.push(n);
+
+        caixa.innerHTML = "";
+        notas.forEach((nota) => {
+            const item = document.createElement("option");
+            item.text = nota;
+            caixa.appendChild(item);
+        });
+    }
+</script>
+</html>
